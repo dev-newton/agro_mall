@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import Table from "../components/Table";
 
-export default function Dashboard() {
+function Dashboard() {
   return (
     <div class="con-pt container">
       <h1>DASHBOARD</h1>
@@ -34,3 +35,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+export default withRouter(Dashboard);
