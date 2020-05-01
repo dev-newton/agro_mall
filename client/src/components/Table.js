@@ -5,7 +5,7 @@ import "../App.css";
 export default function Table() {
   return (
     <div>
-      <table class="table table-striped table-bordered">
+      <table className="table table-striped table-bordered">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -23,14 +23,14 @@ export default function Table() {
             </td>
             <td>Otto</td>
             <td>2010-12-4</td>
-            <td class="table-action-width">
+            <td className="table-action-width">
               <Link to="/edit">
-                <button class="btn btn-warning table-action-rm">
-                  <i class="fa fa-edit"></i>&nbsp; Edit
+                <button className="btn btn-warning table-action-rm">
+                  <i className="fa fa-edit"></i>&nbsp; Edit
                 </button>
               </Link>
-              <button class="btn btn-danger">
-                <i class="fa fa-trash"></i> &nbsp; Delete
+              <button className="btn btn-danger">
+                <i className="fa fa-trash"></i> &nbsp; Delete
               </button>
             </td>
           </tr>
@@ -41,14 +41,14 @@ export default function Table() {
             </td>
             <td>Thornton</td>
             <td>2010-12-4</td>
-            <td class="table-action-width">
+            <td className="table-action-width">
               <Link to="/edit">
-                <button class="btn btn-warning table-action-rm">
-                  <i class="fa fa-edit"></i>&nbsp; Edit
+                <button className="btn btn-warning table-action-rm">
+                  <i className="fa fa-edit"></i>&nbsp; Edit
                 </button>
               </Link>
-              <button class="btn btn-danger">
-                <i class="fa fa-trash"></i> &nbsp; Delete
+              <button className="btn btn-danger">
+                <i className="fa fa-trash"></i> &nbsp; Delete
               </button>
             </td>
           </tr>
@@ -59,14 +59,14 @@ export default function Table() {
             </td>
             <td>the Bird</td>
             <td>2010-12-4</td>
-            <td class="table-action-width">
+            <td className="table-action-width">
               <Link to="/edit">
-                <button class="btn btn-warning table-action-rm">
-                  <i class="fa fa-edit"></i>&nbsp; Edit
+                <button className="btn btn-warning table-action-rm">
+                  <i className="fa fa-edit"></i>&nbsp; Edit
                 </button>
               </Link>
-              <button class="btn btn-danger">
-                <i class="fa fa-trash"></i> &nbsp; Delete
+              <button className="btn btn-danger">
+                <i className="fa fa-trash"></i> &nbsp; Delete
               </button>
             </td>
           </tr>
@@ -77,14 +77,14 @@ export default function Table() {
             </td>
             <td>Otto</td>
             <td>2010-12-4</td>
-            <td class="table-action-width">
+            <td className="table-action-width">
               <Link to="/edit">
-                <button class="btn btn-warning table-action-rm">
-                  <i class="fa fa-edit"></i>&nbsp; Edit
+                <button className="btn btn-warning table-action-rm">
+                  <i className="fa fa-edit"></i>&nbsp; Edit
                 </button>
               </Link>
-              <button class="btn btn-danger">
-                <i class="fa fa-trash"></i> &nbsp; Delete
+              <button className="btn btn-danger">
+                <i className="fa fa-trash"></i> &nbsp; Delete
               </button>
             </td>
           </tr>
@@ -95,14 +95,14 @@ export default function Table() {
             </td>
             <td>Thornton</td>
             <td>2010-12-4</td>
-            <td class="table-action-width">
+            <td className="table-action-width">
               <Link to="/edit">
-                <button class="btn btn-warning table-action-rm">
-                  <i class="fa fa-edit"></i>&nbsp; Edit
+                <button className="btn btn-warning table-action-rm">
+                  <i className="fa fa-edit"></i>&nbsp; Edit
                 </button>
               </Link>
-              <button class="btn btn-danger">
-                <i class="fa fa-trash"></i> &nbsp; Delete
+              <button className="btn btn-danger">
+                <i className="fa fa-trash"></i> &nbsp; Delete
               </button>
             </td>
           </tr>
@@ -113,15 +113,15 @@ export default function Table() {
             </td>
             <td>the Bird</td>
             <td>2010-12-4</td>
-            <td class="table-action-width">
+            <td className="table-action-width">
               <Link to="/edit">
-                <Link to="/edit">
-                  <button class="btn btn-warning table-action-rm">
-                    <i class="fa fa-edit"></i>&nbsp; Edit
-                  </button>
-                </Link>
-                <button class="btn btn-danger">
-                  <i class="fa fa-trash"></i> &nbsp; Delete
+                <button className="btn btn-warning table-action-rm">
+                  <i className="fa fa-edit"></i>&nbsp; Edit
+                </button>
+              </Link>
+              <Link to="/delete">
+                <button className="btn btn-danger">
+                  <i className="fa fa-trash"></i> &nbsp; Delete
                 </button>
               </Link>
             </td>

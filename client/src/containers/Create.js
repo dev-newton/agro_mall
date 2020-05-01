@@ -4,7 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import ImageUploader from "react-images-upload";
 import axios from "axios";
 
-function Create() {
+import { createMarket } from "../store/actions/market";
+
+function Create(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -13,6 +15,8 @@ function Create() {
   const [address, setAddress] = useState("");
   const [longitude, setLongitude] = useState("");
   const [latitude, setLatitude] = useState("");
+
+  const dispatch = useDispatch();
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
@@ -27,24 +31,7 @@ function Create() {
   };
 
   const imagesChangeHandler = (image) => {
-    // setImages(image[0]);
-    setImages({ images: images.concat(image) });
-    // const res = Object.entries(image);
-    // res.map((obj) => {
-    //   const key = obj[0];
-    //   const value = obj[1];
-
-    //   console.log(value);
-    //   images.concat(value);
-    //   setImages(images.concat(value));
-    //   console.log(images);
-    // });
-
-    console.log("images", images);
-    // console.log(1, image[0]);
-    // console.log(2, image[1]);
-    // console.log(2, images.concat(image[0]));
-    // console.log("res", res[0]);
+    image && setImages({ images: images.concat(image) });
   };
 
   const addressChangeHandler = (event) => {
@@ -64,62 +51,45 @@ function Create() {
 
     const files = images.images;
 
-    files.map(async (image) => {
-      const formData = new FormData();
-      formData.append("image", image);
-      try {
-        const res = await axios.post("/upload", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
+    files &&
+      files.map(async (image) => {
+        const formData = new FormData();
+        formData.append("image", image);
+        try {
+          const res = await axios.post("/upload", formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
 
-        const { fileName, filePath } = res.data;
+          const { fileName, filePath } = res.data;
 
-        setUploadedImages({ fileName, filePath });
-      } catch (error) {
-        if (error.response.status === 500) {
-          console.log("There was a problem with the server");
-        } else {
-          console.log("errrrr", error.response.data.msg);
+          setUploadedImages({ fileName, filePath });
+        } catch (error) {
+          if (error.response.status === 500) {
+            console.log("There was a problem with the server");
+          } else {
+            console.log("errrrr", error.response.data.msg);
+          }
         }
-      }
-    });
+      });
 
-    console.log("formData-=====", files);
-    // return;
-    // const newMarket = {
-    //   name,
-    //   description,
-    //   category,
-    //   images,
-    //   address,
-    //   latitude,
-    //   longitude,
-    // };
+    const newMarket = {
+      name,
+      description,
+      category,
+      images: files,
+      address,
+      latitude,
+      longitude,
+    };
 
-    // if (newMarket) {
-    //   console.log("Ready to be submitted!");
-    //   console.log(newMarket);
-    // }
-
-    // try {
-    //   const res = await axios.post("/upload", formData, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   });
-
-    //   const { fileName, filePath } = res.data;
-
-    //   setUploadedImages({ fileName, filePath });
-    // } catch (error) {
-    //   if (error.response.status === 500) {
-    //     console.log("There was a problem with the server");
-    //   } else {
-    //     console.log("errrrr", error.response.data.msg);
-    //   }
-    // }
+    dispatch(createMarket(newMarket))
+      .then((res) => {
+        console.log("SUCCESS");
+        props.history.push("/dashboard");
+      })
+      .catch((err) => console.log(err, "ERROR"));
   };
 
   return (

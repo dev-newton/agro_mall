@@ -4,9 +4,9 @@ import "../App.css";
 
 export default function Nav() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark main-color">
+    <nav className="navbar navbar-expand-lg navbar-dark main-color">
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarTogglerDemo03"
@@ -14,17 +14,17 @@ export default function Nav() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <Link class="navbar-brand" to="/">
+      <Link className="navbar-brand" to="/">
         <h3>
           <b>AgroMall</b>
         </h3>
       </Link>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active"></li>
+      <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li className="nav-item active"></li>
         </ul>
       </div>
     </nav>
