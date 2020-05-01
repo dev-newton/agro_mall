@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 export default function Nav() {
   return (
-    <nav
-      style={{ backgroundColor: "#43a047" }}
-      class="navbar navbar-expand-lg navbar-dark"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark main-color">
       <button
         class="navbar-toggler"
         type="button"

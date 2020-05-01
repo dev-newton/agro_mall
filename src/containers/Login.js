@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 export default function Login() {
   return (
-    <div>
-      <div class="container col-md-4" style={{ paddingTop: 200 }}>
+    <div class="login-pt">
+      <div class="container col-md-4">
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -28,15 +29,7 @@ export default function Login() {
           </div>
 
           <Link to="/dashboard">
-            <button
-              style={{
-                backgroundColor: "#43a047",
-                border: "none",
-                width: "100%",
-              }}
-              type="submit"
-              class="btn btn-primary"
-            >
+            <button type="submit" class="btn long-btn main-color">
               Login
             </button>
           </Link>

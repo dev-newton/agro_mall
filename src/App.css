@@ -1,9 +1,44 @@
-.App {
-  text-align: center;
+.main-color {
+  background-color: #43a047;
+  color: #fff;
 }
 
-.Nav {
-  background-color: "#43a047";
-  padding-right: 20;
-  padding-left: 20;
+.con-pt {
+  padding: 20px;
+}
+
+.login-pt {
+  padding-top: 200px;
+}
+
+.long-btn {
+  border: none;
+  width: 100%;
+}
+
+.long-btn:hover,
+.long-btn:focus {
+  background-color: green;
+  color: #fff;
+}
+
+.short-btn:focus {
+  background-color: green;
+  color: #fff;
+}
+
+.short-btn:hover {
+  background-color: green;
+  color: #fff;
+}
+.short-btn {
+  border: none;
+}
+
+.table-action-width {
+  width: 220px;
+}
+
+.table-action-rm {
+  margin-right: 10px;
 }
